@@ -21,7 +21,7 @@ depends=("${MINGW_PACKAGE_PREFIX}-gcc-libs"
          "${MINGW_PACKAGE_PREFIX}-wineditline"
          "${MINGW_PACKAGE_PREFIX}-zlib")
 options=('staticlibs' 'strip')
-source=(https://ftp.pcre.org/pub/pcre/${_realname}-${pkgver}.tar.bz2{,.sig})
+source=(https://downloads.sourceforge.net/project/pcre/${_realname}/${pkgver}/${_realname}-${pkgver}.tar.bz2{,.sig})
 sha256sums=('4dae6fdcd2bb0bb6c37b5f97c33c2be954da743985369cddac3546e3218bffb8'
             'SKIP')
 validpgpkeys=('45F68D54BBE23FB3039B46E59766E084FB0F43D8')
@@ -40,6 +40,7 @@ build() {
     --build=${MINGW_CHOST} \
     --host=${MINGW_CHOST} \
     --target=${MINGW_CHOST} \
+    --enable-jit \
     --enable-unicode-properties \
     --enable-utf \
     --enable-pcre8 \

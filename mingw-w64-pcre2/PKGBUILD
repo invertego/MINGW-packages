@@ -27,6 +27,7 @@ validpgpkeys=('45F68D54BBE23FB3039B46E59766E084FB0F43D8') # Philip Hazel <Philip
 
 build() {
   local -a _common_config=(
+    --enable-jit
     --enable-pcre2-8
     --enable-pcre2-16
     --enable-pcre2-32
